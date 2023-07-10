@@ -13,6 +13,7 @@ public:
     ~FilePlotSource();
     std::optional<track2d::Plot> get() final override;
     bool advance() final override;
+    void display() const;
     
 private:
     std::list<track2d::Plot> m_plot_list;

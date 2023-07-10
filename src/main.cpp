@@ -18,14 +18,18 @@ int main(int argc, char** argv) {
     auto plot_file_path = std::string(argv[1]);
     auto perimeter_file_path = std::string(argv[2]);   
     
-    std::shared_ptr<track2d::IPlotSource> file_plot_source;
+    std::shared_ptr<FilePlotSource> file_plot_source;
     try {
         file_plot_source = std::make_shared<FilePlotSource>(plot_file_path);
     } catch(std::exception const& e) {
         std::cout << "error: " << e.what() << std::endl;
         return -1;
     } 
-    
+
+    std::cout << "plot data:" << std::endl;
+    file_plot_source->display();
+    std::cout << std::endl;
+
     auto linear_estimator = 
         std::make_shared<track2d::TrackEstimator>(file_plot_source, 
                                                   track2d::TrackEstimator::Model::linear);
@@ -48,9 +52,11 @@ int main(int argc, char** argv) {
     std::cout << "perimeter:" << std::endl;
     perimeter->display();
     std::cout << std::endl;
-    
+
+    double look_ahead_interval = 10.0;
+
     std::optional<track2d::ITrackEstimator::Result> result = 
-        linear_estimator->get_expected_crossing(perimeter);
+        linear_estimator->get_expected_crossing(perimeter, look_ahead_interval);
     
     if (result) {
         std::cout << "track is expected to cross perimeter" << std::endl;

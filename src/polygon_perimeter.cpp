@@ -12,7 +12,7 @@ bool PolygonPerimeter::is_point_inside(const track2d::point2d_t& pt) {
 
 void PolygonPerimeter::display() const {
     for (const auto& pt : m_points) {
-        std::cout << " (" << pt.x << "," << pt.y << ")";
+        std::cout << pt.x << "," << pt.y << std::endl;
     }
     
     std::cout << std::endl;
