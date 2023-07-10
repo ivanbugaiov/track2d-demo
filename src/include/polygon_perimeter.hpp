@@ -1,7 +1,7 @@
 #ifndef POLYGON_PERIMETER_HPP
 #define POLYGON_PERIMETER_HPP
 
-#include "track2d-lib/include/track2d.hpp"
+#include "../../track2d-lib/include/track2d.hpp"
 
 #include <vector>
 

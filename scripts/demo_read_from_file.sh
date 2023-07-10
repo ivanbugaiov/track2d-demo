@@ -20,9 +20,19 @@ build() {
   make -j${jN}
 }
 
-#update_version
+echo "##############################"
+echo "### update project sources ###"
+echo "##############################"
+echo ""
+update_version
+echo ""
 
+echo "##############################"
+echo "######## build project #######"
+echo "##############################"
+echo ""
 build
+echo ""
 
 BIN_PATH="${BUILD_DIR}/track2d-demo"
 
@@ -32,6 +42,11 @@ ASSET_DIR="${PROJECT_ROOT}/assets"
 
 PERIMETER_PATH="${ASSET_DIR}/demo_read_from_file/perimeter.txt"
 PLOT_PATH="${ASSET_DIR}/demo_read_from_file/plot.txt"
+
+echo "##############################"
+echo "########## run demo ##########"
+echo "##############################"
+echo ""
 
 ${BIN_PATH} "${PLOT_PATH}" "${PERIMETER_PATH}"
 

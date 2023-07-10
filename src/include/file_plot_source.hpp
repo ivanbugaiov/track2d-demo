@@ -1,7 +1,7 @@
 #ifndef FILE_PLOT_SOURCE_HPP
 #define FILE_PLOT_SOURCE_HPP
 
-#include "track2d-lib/include/track2d.hpp"
+#include "../../track2d-lib/include/track2d.hpp"
 
 #include <list>
 #include <optional>

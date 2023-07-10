@@ -1,7 +1,8 @@
 #ifndef TRACK2D_DEMO_UTILS_HPP
 #define TRACK2D_DEMO_UTILS_HPP
 
-#include "track2d-lib/include/track2d.hpp"
+#include "../../track2d-lib/include/track2d.hpp"
+#include "polygon_perimeter.hpp"
 
 #include <string>
 

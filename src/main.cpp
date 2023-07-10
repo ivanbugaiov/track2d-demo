@@ -1,4 +1,4 @@
-#include "track2d-lib/include/track2d.hpp"
+#include "../track2d-lib/include/track2d.hpp"
 
 #include "include/file_plot_source.hpp"
 #include "include/polygon_perimeter.hpp"
