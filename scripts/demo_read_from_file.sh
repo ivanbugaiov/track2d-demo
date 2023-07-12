@@ -38,7 +38,7 @@ echo "##############################"
 echo "### update project sources ###"
 echo "##############################"
 echo ""
-#update_version
+update_version
 echo ""
 
 echo "##############################"
