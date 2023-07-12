@@ -2,6 +2,10 @@
 
 track2d-demo is an example of how track2d-lib could be used to estimate trajectory on a 2d plane
 
+![straight trajectory demo scenario](doc/img/straight.png)
+
+![curving trajectory demo scenario](doc/img/curved.png)
+
 ## Installation
 
 Clone the project and run script `./scripts/demo_read_from_file.sh`
