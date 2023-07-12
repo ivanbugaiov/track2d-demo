@@ -1,18 +1,16 @@
 #include "include/file_plot_source.hpp"
 #include "include/polygon_perimeter.hpp"
+#include "include/track2d_demo_utils.hpp"
 
 #include <cstdio>
 #include <fstream>
 #include <iostream>
 #include <vector>
 
-double get_vector_length(const track2d::vector2d_t& vec) {
-    return 0.0;
-} // get_vector_length
-
-double get_vector_angle(const track2d::vector2d_t& vec) {
-    return 0.0;
-} // get_vector_angle
+bool check_double_equal(double first, double second) {
+    constexpr static double eps = 1.0 / 1000000.0;
+    return std::abs(first - second) <= std::abs(eps * std::max(first, second));
+}
 
 void help() {
     std::cout << "Usage: track2d-demo TRACK RECT" << std::endl;
@@ -21,11 +19,11 @@ void help() {
 std::shared_ptr<PolygonPerimeter> load_perimeter_from_file(const std::string& path) {
     std::fstream perimeter_file(path, std::ios_base::in);
     if (perimeter_file) {
-        std::vector<track2d::point2d_t> points;
+        std::vector<track2d::Vector2D> points;
         std::string line;
         
         while (std::getline(perimeter_file, line)) {
-            track2d::point2d_t pt;
+            track2d::Vector2D pt;
             sscanf(line.c_str(),"%lf,%lf", &(pt.x), &(pt.y));
             points.push_back(pt);
         }
