@@ -1,11 +1,6 @@
 # track2d-demo
 
 track2d-demo is an example of how track2d-lib could be used to estimate trajectory on a 2d plane
-
-![straight trajectory demo scenario](doc/img/straight.png)
-
-![curving trajectory demo scenario](doc/img/curved.png)
-
 ## Installation
 
 Clone the project and run script `./scripts/demo_read_from_file.sh`
@@ -14,6 +9,29 @@ Clone the project and run script `./scripts/demo_read_from_file.sh`
 git clone https://github.com/ivanbugaiov/track2d-demo
 cd track2d-demo
 ./scripts/demo_read_from_file.sh
+```
+
+Demo runs generate some nice images:
+
+![straight trajectory demo scenario](doc/img/straight.png)
+
+![curving trajectory demo scenario](doc/img/curved.png)
+
+Green markers indicate known plots.
+
+Purple markers represent trajectory estimate.
+
+Red marker show perimeter intersection point. 
+
+Detected intersections are reported as following in command line log:
+
+```bash
+...
+track is expected to cross perimeter
+  estimated time: 47
+  estimated coordinates: 200, 200
+  estimated speed: 29.048
+  estimated orientation: 0.785398
 ```
 
 ## Usage
